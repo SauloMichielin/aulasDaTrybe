@@ -1,1 +1,1 @@
-Repositório de exercícios do bloco 2
+Repositório de exercícios da Trybe
