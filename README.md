@@ -1,1 +1,1 @@
-Repositório de exercícios do bloco 2
+Exercícios do Bloco 2 2.2
