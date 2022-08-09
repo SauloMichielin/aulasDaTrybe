@@ -1,1 +1,1 @@
-Repositório de exercícios da Trybe
+Exercícios do bloco 3.1
