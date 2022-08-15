@@ -1,0 +1,58 @@
+ol{
+    background-color: yellow;
+}
+
+.impar{
+    text-transform: uppercase;
+}
+
+.par{
+    color: green;
+}
+
+h1, h2, h3{
+    color: red;
+}
+
+h1 em{
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li{
+    font-size: 20px;
+};
+
+li, em{
+    font-weight:bold;
+}
+
+.linguagens{
+    color: blue;
+}
+
+.java{
+    background-color: pink;
+}
+
+#stack :hover{
+    font-weight: bold;
+    background-color: orange;
+}
+
+#school :hover{
+    font-weight: bold;
+    background-color: green;
+}
+#mdn :hover{
+    font-weight: bold;
+    background-color: black;
+}
+#dev :hover{
+    font-weight: bold;
+    background-color: yellow;
+}
+#trybe :hover{
+    font-weight: bold;
+    background-color: green;
+}
