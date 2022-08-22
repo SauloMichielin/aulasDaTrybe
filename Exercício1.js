@@ -1,62 +1,54 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-
-//Percorre todos os valores do Array
-for (let index = 0; index < numbers.length; index++){
-    console.log(numbers[index]);
+//Exercício 1 - Fatorial
+let fatorial = 1;
+for (let index = 1; index <= 5; index++){
+    fatorial *= index;
 }
 
-//Soma todos os valores do Array
-let soma = 0
-for (index = 0; index < numbers.length; index++){
-    soma = soma + numbers[index];    
-}
+console.log('A soma fatorial de 5 é: '+fatorial);
 
-//Faz a média dos valores do Array
-console.log('A soma dos valores do array é: ', soma);
-console.log('A média dos valores do array é: ', (soma/numbers.length));
-if (soma/numbers.length > 20){
-    console.log('valor maior que 20')
-} else{
-    console.log('valor menor ou igual a 20')
+//Inverter a palavra banana
+let palavra = 'Banana';
+let palavraInvertida = ''
+for (let index = palavra.length -1; index >= 0; index--){
+    palavraInvertida += palavra[index];
 }
+console.log('A palavra invertida de '+palavra + ' é '+palavraInvertida);
 
-//Encontra o maior número
-let maiorNumero = 0
-for (index=0;index < numbers.length; index++){
-    if (numbers[index] > maiorNumero){
-        maiorNumero = numbers[index];
+//Retorna a maior palavra de um array
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+let maiorPalavra = ''
+for (let index = 0; index < array.length; index++){
+    if (array[index].length > maiorPalavra.length){
+        maiorPalavra = array[index];
     }
 }
-console.log('O maior número do Array é: ', maiorNumero);
+console.log('A maior palavra do array é: '+maiorPalavra);
 
-//Lista os números ímpares do Array
-let numerosImpares = [];
-for (index=0;index < numbers.length; index++){
-    if (numbers[index]%2 == 1){
-        numerosImpares.push(numbers[index]);
+//Retorna a menor palavra de um array
+let menorPalavra = array[0];
+for (let index = 0; index < array.length; index++){
+    if (array[index].length < menorPalavra.length){
+        menorPalavra = array[index];
     }
 }
-console.log('Os números ímpares da Array são: ', numerosImpares);
+console.log('A menor palavra do array é: '+menorPalavra);
 
-//Encontra o menor número
-let menorNumero = numbers[0]
-for (index=0;index < numbers.length; index++){
-    if (numbers[index] < menorNumero){
-        menorNumero = numbers[index];
+//Retorna o maior número primo menor que 50
+
+let primos = [];
+console.log(primos)
+let resultadoFinal = 0
+let temp = []
+for (let index = 2; index <= 50; index += 1){
+    temp.splice(0,temp.length)
+    for (let cont = 2; cont<index; cont +=1){        
+        if (index%cont == 0){
+            temp.push(0)
+            break            
+        }        
+    }    
+    if (temp.length === 0){
+        primos.push(index)
     }
 }
-console.log('O menor número do Array é: ', menorNumero);
-
-//criando um array de 25 itens
-let novoArray = []
-for (index = 1; index <= 25; index++){
-    novoArray.push(index);
-}
-console.log(novoArray);
-
-//Dividindo o array novoArray por 2
-let divisao = []
-for (index = 0; index < novoArray.length; index++){
-    divisao.push(novoArray[index]/2);
-}
-console.log(divisao);
+console.log(primos)
