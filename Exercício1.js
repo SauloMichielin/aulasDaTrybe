@@ -4,7 +4,7 @@ for (let index = 1; index <= 5; index++){
     fatorial *= index;
 }
 
-console.log('A soma fatorial de 5 é: '+fatorial);
+console.log('A soma fatorial de 5 é: '+fatorial); 
 
 //Inverter a palavra banana
 let palavra = 'Banana';
@@ -12,7 +12,7 @@ let palavraInvertida = ''
 for (let index = palavra.length -1; index >= 0; index--){
     palavraInvertida += palavra[index];
 }
-console.log('A palavra invertida de '+palavra + ' é '+palavraInvertida);
+console.log('A palavra invertida de '+palavra + ' é '+palavraInvertida); //? 
 
 //Retorna a maior palavra de um array
 let array = ['java', 'javascript', 'python', 'html', 'css'];
