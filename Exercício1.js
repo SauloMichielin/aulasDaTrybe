@@ -21,6 +21,25 @@ let info = {
     console.log(info['personagem'] + ' e ' + info2['personagem']);
     console.log(info['origem'] + ' e ' + info2['origem']);
     console.log(info['nota'] + ' e ' + info2['nota']);
-    
+    // if (info['recorrente']='sim' && info2['recorrente']='sim'){
+    //     console.log('Ambos são recorrentes')
+    // }
   
     console.log('Bem vinda '+info['personagem']);
+
+//Função palindromo
+let palavra = 'arara'
+function verificaPalindromo(palavra){      
+    let retorno = true;
+    let words = ''
+    for (index = palavra.length-1; index >= 0 ; index -= 1){
+        words += palavra[index];
+    }
+    if (words === palavra){
+        retorno = true;
+    }else{
+        retorno = false;
+    }
+    return(retorno);
+}
+console.log(verificaPalindromo(palavra))
