@@ -10,13 +10,14 @@
 <body>
   <main>
     <form action="" method="get">
-      <p>Usuário</p>
-      <input type="email" name="email" placeholder="Digite seu e-mail" id="user" required>
-      <p>Senha</p>
+      <label for="user">Usuário</label>
+      <input type="email" name="email" placeholder="Digite seu e-mail" id="user" required autofocus autocomplete="off"><br>
+      <label for="senha">Senha</label>
       <input type="password" name="senha" placeholder="Digite sua senha" id="senha" required>
-      <button id="button">Entrar</button>
       <br>
       <input type="checkbox" name="lembre-me" id="lembreMe">Lembre-me
+      <br>
+      <button id="button">Entrar</button>
     </form>
   </main>
   <link rel="stylesheet" href="script.js">
