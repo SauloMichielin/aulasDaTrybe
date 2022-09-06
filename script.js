@@ -25,12 +25,12 @@ function createDaysOfTheWeek() {
 }
 diaDoMes(decemberDaysList)
 
-const botoes = document.getElementsByClassName("buttons-container");
+const botoes = document.querySelector(".buttons-container");
 console.log(botoes)
-// function feriados(diasFeriados) {
+function feriados(diasFeriados) {
     const botao = document.createElement('button');
     botao.innerText = 'Feriados';
     botao.classList.add('btn-holiday')
     botoes.appendChild(botao);
-// }
-// feriados(2)
+}
+feriados(2)
