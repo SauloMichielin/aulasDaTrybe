@@ -1,1 +1,1 @@
-Exercícios do Bloco 2 2.2
+Exercícios do Bloco 2 - Git & GitHub - Entendendo os comandos
