@@ -1,0 +1,10 @@
+.container {
+
+  margin-bottom: 20px;
+}
+header, form {
+  border: solid black 2px;
+}
+form {
+  margin: 0 7.5%;
+}

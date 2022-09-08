@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Submeter Palestra</title>
-    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <header class="container has-text-centered">
-      <h1 class="title is-1">Submeter Palestra</h1>
-      <p><em>Quer palestrar na nossa conferência? Preencha o formulário!</em></p>
-    </header>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <main>
-      <!-- form -->
-      <form action="" method="get" >
-        <!-- input - full-name -->
-        <div >
-          <div >
-            <label for="full-name">Nome completo:</label>
-            <input required type="text" name="full-name" id="full-name">
-          </div>
-        </div>
-        <!-- fieldset - type-of-talk   -->
-        <div >
-          <fieldset >
-            <legend>Tipo de palestra</legend>
-            <input type="radio" name="talk-type" id="talk-type-1" value="main-stage">
-            <label for="talk-type-1">Palco principal</label>
-            <input type="radio" name="talk-type" id="talk-type-2" value="workshop">
-            <label for="talk-type-2">Workshop</label>
-          </fieldset>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Submeter Palestra</title>
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-        <!-- select - t-short-size -->
-        <div >
-          <label for="tamanho-da-camisa">Tamanho da camisa:</label>
-          <select name="tamanho-da-camisa" id="tamanho-da-camisa">
-            <option value="p">Pequeno</option>
-            <option value="m">Médio</option>
-            <option value="g">Grande</option>
-          </select>
-        </div>
+<body>
+  <header class="container has-text-centered">
+    <h1 class="title is-1">Submeter Palestra</h1>
+    <p><em>Quer palestrar na nossa conferência? Preencha o formulário!</em></p>
+  </header>
 
-        <!-- textarea - abstract  -->
-        <div >
-         <label for="abstract">Resumo da palestra:</label>
-         <textarea placeholder="Explique o conteúdo da sua palestra" name="abstract" id="abstract" ></textarea>
-        </div>
+  <main>
+    <!-- form -->
+    <form action="" method="get">
+      <!-- input - full-name -->
+      <div class="container">
+        <label for="full-name">Nome completo:</label>
+        <input class="input is-success" required type="text" name="full-name" id="full-name">
+      </div>
+      <!-- fieldset - type-of-talk   -->
+      <div class="container">       
+          <p class="">Tipo de palestra</p>
+        <div class="radio">
 
-        <!-- checkbox - available -->
-        <div >
+        </div>
+        <div class="radio">
+          <input type="radio" name="talk-type" id="talk-type-1" value="main-stage">
+          <label for="talk-type-1">Palco principal</label>
+        </div>          
+          <input type="radio" name="talk-type" id="talk-type-2" value="workshop">
+          <label for="talk-type-2">Workshop</label>
+        </fieldset>
+      </div>
+
+      <!-- select - t-short-size -->
+      <div class="container">
+        <label for="tamanho-da-camisa">Tamanho da camisa:</label>
+        <div class="select is-success">
+        <select name="tamanho-da-camisa" id="tamanho-da-camisa">
+          <option value="p">Pequeno</option>
+          <option value="m">Médio</option>
+          <option value="g">Grande</option>
+        </select>
+      </div>
+      </div>
+
+      <!-- textarea - abstract  -->
+      <div class="container">
+        <label for="abstract">Resumo da palestra:</label>
+        <textarea class="textarea is-success" placeholder="Explique o conteúdo da sua palestra" name="abstract" id="abstract"></textarea>
+      </div>
+
+      <!-- checkbox - available -->
+      <div class="container">
+        <label class="checkbox" for="available"> 
           <input type="checkbox" name="is-available" id="available">
-          <label for="available"> Confirmo que estou disponível na data do evento</label>
-        </div>
+        Confirmo que estou disponível na data do evento</label>
+      </div>
 
-        <!-- button - submit -->
-        <div >
-          <button >Enviar</button>
-          
-        </div>
-        
+      <!-- button - submit -->
+      <div class="container">
+        <button type="submit" class="button is-success">Enviar</button>
+        <button type="reset" class="button is-danger">Cancelar</button>
+      </div>
+    </form>
+  </main>
+</body>
 
-      </form>
-    </main>
-  </body>
-</html> 
+</html>
