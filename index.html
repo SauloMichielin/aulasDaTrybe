@@ -1,25 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <main>
-    <form action="" method="get">
-      <label for="user">Usuário</label>
-      <input type="email" name="email" placeholder="Digite seu e-mail" id="user" required autofocus autocomplete="off"><br>
-      <label for="senha">Senha</label>
-      <input type="password" name="senha" placeholder="Digite sua senha" id="senha" required>
-      <br>
-      <input type="checkbox" name="lembre-me" id="lembreMe">Lembre-me
-      <br>
-      <button id="button">Entrar</button>
-    </form>
-  </main>
-  <link rel="stylesheet" href="script.js">
-</body>
-</html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Submeter Palestra</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <header class="speaker-form-header">
+      <h1>Submeter Palestra</h1>
+      <p><em>Quer palestrar na nossa conferência? Preencha o formulário!</em></p>
+    </header>
+
+    <main>
+      <!-- form -->
+      <form action="" method="get" class="speaker-form">
+        <!-- input - full-name -->
+        <div class="form-row">
+          <div class="line-content">
+            <label for="full-name">Nome completo:</label>
+            <input required type="text" name="full-name" id="full-name">
+          </div>
+        </div>
+        <!-- fieldset - type-of-talk   -->
+        <div class="line-content">
+          <fieldset class="legacy-form-row">
+            <legend>Tipo de palestra</legend>
+            <input type="radio" name="talk-type" id="talk-type-1" value="main-stage">
+            <label for="talk-type-1">Palco principal</label>
+            <input type="radio" name="talk-type" id="talk-type-2" value="workshop">
+            <label for="talk-type-2">Workshop</label>
+          </fieldset>
+        </div>
+
+        <!-- select - t-short-size -->
+        <div class="line-content">
+          <label for="tamanho-da-camisa">Tamanho da camisa:</label>
+          <select name="tamanho-da-camisa" id="tamanho-da-camisa">
+            <option value="p">Pequeno</option>
+            <option value="m">Médio</option>
+            <option value="g">Grande</option>
+          </select>
+        </div>
+
+        <!-- textarea - abstract  -->
+        <div class="line-content">
+         <label for="abstract">Resumo da palestra:</label>
+         <textarea placeholder="Explique o conteúdo da sua palestra" name="abstract" id="abstract" ></textarea>
+        </div>
+
+        <!-- checkbox - available -->
+        <div class="line-content">
+          <input type="checkbox" name="is-available" id="available">
+          <label for="available"> Confirmo que estou disponível na data do evento</label>
+        </div>
+
+        <!-- button - submit -->
+        <div class="line-content">
+          <button>Enviar</button>
+          
+        </div>
+        
+
+      </form>
+    </main>
+  </body>
+</html> 
