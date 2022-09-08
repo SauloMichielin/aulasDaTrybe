@@ -1,1 +1,1 @@
-Exercícios do bloco 2.1
+Exercícios do Bloco 2 - Git, GitHub e Internet
