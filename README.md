@@ -1,2 +1,2 @@
 Repositório de exercícios da Trybe
-Exercícios de DOM!
+Exercícios Bloco 6 - HTML e CSS: Forms, Flexbox e Responsivo!
