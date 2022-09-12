@@ -1,2 +1,2 @@
 Repositório de exercícios da Trybe
-Exercícios de DOM!
+Exercícios de Flexbox - parte 2
