@@ -1,2 +1,2 @@
 Repositório de exercícios da Trybe
-Exercícios de Flexbox - parte 2
+Exercícios de CSS Responsivo - Mobile First
