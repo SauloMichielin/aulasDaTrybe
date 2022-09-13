@@ -10,8 +10,12 @@
     box-sizing: inherit;
   }
   
+  p {
+    font-size: 20px;
+  }
+
   body {
-  
+    margin: 5%;
   }
   
   article {
@@ -19,7 +23,7 @@
   }
   
   h1 {
-  
+    font-size: 25px;
   }
   
   h2 {
@@ -28,6 +32,7 @@
   
   img {
       max-width: 100%;
+      margin-top: 20px;
   }
   
   main {
@@ -44,4 +49,20 @@
   
   figcaption {
     font-size: .8em;
+  }
+
+  @media screen and (max-width: 800px) {
+   body {
+    background-color: lightblue;
+    margin: 2%;
+   }
+
+   section {
+    max-width: 780px;
+   }
+
+   p {
+    font-size: 15px;
+   }
+
   }
