@@ -1,47 +1,97 @@
+body {
+  align-items: center;
+  color: #525252;
+  display: flex;
+  flex-flow: column wrap;
+  font-family: Raleway, sans-serif;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+}
 
+h1 {
+  font-family: Cinzel, serif;
+  font-size: 48px;
+}
 
-* {
+h3 {
+  font-size: 25px;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Ubuntu';
 }
 
-.header-img {
-  width: 70px;
+p {
+  font-size: 18px;
+  font-weight: 300;
 }
 
-.gallery-img {
-  width: 150px;
+p.trick {
+  color: white;
+  font-size: 14px;
 }
 
-.social-img {
-  width: 25px;
-  margin-left: 10px;
+p strong {
+  font-weight: 700;
 }
 
-.main {
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  height: 450px;
+.card p:nth-last-child(1) {
+  align-self: flex-end;
+  font-size: 14px;
+}
+
+.cards {
   display: flex;
-  flex-flow: wrap;
-  justify-content: space-around;
+  flex-flow: row wrap;
 }
 
-.main h4 {
-  text-align: center;
-}
-
-.main div {
-  background-color: blue;
-  width: 150px;
+.card {
+  border-radius: 5px;
+  color: white;
+  display: none;
+  flex-flow: row wrap;
   height: 200px;
+  margin: 20px;
+  padding: 20px;
+  width: 200px;
 }
 
-.container {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-evenly;
+.card:nth-of-type(1) {
+  background-color: #0fa36b;
+}
+
+.card:nth-of-type(2) {
+  background-color: #0255c2;
+}
+
+.card:nth-of-type(3) {
+  background-color: #41197f;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .card:nth-of-type(2) {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) , (min-width: 950px) {
+  .card:nth-of-type(3) {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .card:nth-of-type(1) {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .trick {
+    display: block;
+  }  
+}
+
+@media screen and (min-width: 501px) {
+  .trick {
+    display: none;
+  }  
 }
