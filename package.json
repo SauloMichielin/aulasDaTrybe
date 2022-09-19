@@ -1,0 +1,23 @@
+{
+  "name": "aulasdatrybe",
+  "version": "1.0.0",
+  "description": "Repositório de exercícios da Trybe Exercícios de JavaScript ES6 - let, const, arrow functions e template literals",
+  "main": "01 - hoisting.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SauloMichielin/aulasDaTrybe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SauloMichielin/aulasDaTrybe/issues"
+  },
+  "homepage": "https://github.com/SauloMichielin/aulasDaTrybe#readme",
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
+}

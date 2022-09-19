@@ -1,5 +1,24 @@
-Repositório de exercícios da Trybe
-Exercícios de JavaScript ES6 - let, const, arrow functions e template literals
+Repositório de exercícios da Trybe => Exercícios de JavaScript ES6 e Testes Unitários
+
+Instalação do Jest
+1 - passo:
+No diretório do projeto digite no terminal: 'npm init -y'
+
+2 - passo:
+Abra o arquivo package.json e altere esta linha:
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+    para 
+
+  "scripts": {
+    "test": "jest"
+
+3 - passo:
+Digite na pasta do projeto: 'npm install --save-dev jest'
+
+4 - passo:
+Criar um arquivo com nome .gitignore e adicione na primeira linha a pasta 'node_modules'
 
 <!--  _______________ _____  ________ _______ 
       __  ___/___    |__  / / /___  / __  __ \
