@@ -6,13 +6,24 @@
 
 // console.log(findDivisibleBy3And5(numbers));
 
-const names = ['João', 'Irene', 'Fernando', 'Maria'];
+// const names = ['João', 'Irene', 'Fernando', 'Maria'];
 
-const findNameWithFiveLetters = (nomes) => {
-    const resultado = nomes.find((nome) => nome.length === 5);
-    return resultado;
-}
+// const findNameWithFiveLetters = (nomes) => {
+//     const resultado = nomes.find((nome) => nome.length === 5);
+//     return resultado;
+// }
 
+// console.log(findNameWithFiveLetters(names));
 
-
-console.log(findNameWithFiveLetters(names));
+const musicas = [
+    { id: '31031685', title: 'Partita in C moll BWV 997' },
+    { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
+    { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
+  ];
+  
+  function findMusic(id) {
+    const resultado = musicas.find((musica) => musica.id === '31031685')
+    return resultado.title
+  };
+  
+  console.log(findMusic('31031685'));
