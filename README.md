@@ -1,4 +1,4 @@
-Repositório de exercícios da Trybe => Exercícios de JavaScript ES6 e Testes Unitários
+Repositório de exercícios da Trybe => JavaScript ES6 - Higher Order Functions - Array.reduce
 
 Instalação do Jest
 1 - passo:
