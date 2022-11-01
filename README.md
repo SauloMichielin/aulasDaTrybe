@@ -1,4 +1,4 @@
-Repositório de exercícios da Trybe => JavaScript ES6 - Higher Order Functions - Array.reduce
+Repositório de exercícios da Trybe => Front End 1.1 - JavaScript Assíncrono e Callbacks
 
 Instalação do Jest
 1 - passo:
