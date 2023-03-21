@@ -1,11 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Comments() {
-  return (
-    <section>
-      <h1>Home Page</h1>
-      <p>Essa é a Homepage</p>
-    </section>
-  );
+class Home extends React.Component {
+  render() {
+    return (
+      <main className="Home">
+        <h3>Cadastro de Clientes</h3>
+        <div className="link">
+          <Link to="/login">Faça seu Login</Link>
+        </div>
+      </main>
+    );
+  }
 }
-export default Comments;
+
+export default Home;

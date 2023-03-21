@@ -1,127 +1,90 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { screen, render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
 import App from '../App';
-import renderWithRouter from './renderWithRouter';
-import { act } from 'react-dom/test-utils';
+// import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
+import renderWithRouter from './helpers/renderWithRouter';
+import { Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from '../redux/reducers';
+import renderWithRouterAndRedux from './helpers/renderWithRouterAndRedux';
 
+describe('Cadastro de clientes', () => {
+  test('Verifica se a tela Home é renderizada corretamente', () => {
+    renderWithRouter(<App />);
 
-describe('Testando portfólio', () => {
-  describe('Teste o componente <Home />', () => {
-    
-    test('Teste se a home renderiza o título e o subtítulo', () => {
-      // Acessar
-      const history = createMemoryHistory();
-      render(
+    const titleElement = screen.getByRole('heading', { level: 3, name: /cadastro de clientes/i });
+    const linkElement = screen.getByRole('link', { name: /faça seu login/i });
+
+    expect(titleElement).toBeInTheDocument();
+    expect(linkElement).toBeInTheDocument();
+  });
+
+  test('Verifica se a tela de Login é renderizada corretamente', () => {
+    const history = createMemoryHistory({ initialEntries: ['/login'] });
+    const store = createStore(rootReducer);
+    render(
+      <Provider store={ store }>
         <Router history={ history }>
           <App />
         </Router>
-      );
-      const title = screen.getByRole('heading', {
-        name: 'Home Page'
-      });
-      const subTitle = screen.getByText('Essa é a Homepage');
+      </Provider>
+    );
 
-      // Aferir
-      expect(history.location.pathname).toBe('/');
-      expect(title).toBeInTheDocument();
-      expect(subTitle).toBeInTheDocument();
-    })
+    const titleElement = screen.getByRole('heading', { level: 3, name: /login/i });
+    expect(titleElement).toBeInTheDocument();
   });
 
-  describe('Teste o componente <About />', () => {
-    test('Navega para a rota /about pelo link', () => {
-      // Acessar
-      const { history } = renderWithRouter(<App />);
-      const aboutLink = screen.getByRole('link', {
-        name: 'Sobre'
-      });
-      expect(history.location.pathname).toBe('/');
+  test('Verifica se a tela Customers mostra "Login não efetuado"', () => {
+    renderWithRouterAndRedux(<App />, { initialEntries: ['/customers'] });
 
-      // Agir
-      userEvent.click(aboutLink);
+    const titleElement = screen.getByRole('heading', { level: 1, name: /login não efetuado!/i });
+    expect(titleElement).toBeInTheDocument();
+  });
 
-      // Aferir
-      const title = screen.getByRole('heading', {
-        level: 1,
-        name: 'Sobre Mim'
-      });
-      expect(title).toBeInTheDocument();
-      expect(history.location.pathname).toBe('/about');
-
+  test('Verifica se a tela Customers renderiza "Nenhum cliente cadastrado"', () => {
+    renderWithRouterAndRedux(<App />, {
+      initialEntries: ['/customers'],
+      initialState: {
+        customers: [],
+        login: {
+          email: 'procopio@email.com',
+          password: '123456'
+        }
+      }
     });
+
+    const titleElement = screen.getByRole('heading', { level: 1, name: /nenhum cliente cadastrado/i });
+    expect(titleElement).toBeInTheDocument();
   });
 
-  describe('Teste o componente <Projects />', () => {
 
-    test('Navega para a rota /projects pelo link', () => {
-      // Acessar
-      const { history } = renderWithRouter(<App />);
-      const projectsLink = screen.getByRole('link', {
-        name: 'Projetos'
-      });
-
-      // Agir
-      userEvent.click(projectsLink);
-
-
-      // Aferir
-      const title = screen.getByRole('heading', {
-        name: 'Meus Projetos',
-        level: 1
-      });
-      expect(history.location.pathname).toBe('/projects');
-      expect(title).toBeInTheDocument();
-    })
-
-  });
-
-  describe('Teste o componente <NotFound />', () => {
-    test('Mostra a página 404 quando navegado para uma rota inexistente', () => {
-      // Acessar
-      const { history } = renderWithRouter(<App />);
-
-      // Agir
-      // Fazer isso apenas para o history push
-      act(() => {
-        history.push('/xablau');
-      })
-
-      // Aferir
-      const moisesImage = screen.getByRole('img', {
-        name: /erro 404/i
-      });
-      const title = screen.getByRole('heading', {
-        name: /404 page not found/i
-      });
-      const subTitle = screen.getByRole('heading', {
-        name: /algo de errado não está certo/i
-      })
-      expect(moisesImage).toBeInTheDocument();
-      expect(title).toBeInTheDocument();
-      expect(subTitle).toBeInTheDocument();
+  test('Verifica se a tela Customers renderiza os customers', () => {
+    renderWithRouterAndRedux(<App />, {
+      initialEntries: ['/customers'],
+      initialState: {
+        customers: [
+          {
+            name: 'Procopio',
+            age: '25',
+            email: 'procopio@email.com'
+          }
+        ],
+        login: {
+          email: 'procopio@email.com',
+          password: '123456'
+        }
+      }
     });
-  });
 
-  describe('Teste o componente <Comments />', () => {
-    test('Mostra se a página comments é renderizada ao clicar no link de comments', async () => {
-      // Acessar
-      const { history } = renderWithRouter(<App />, '/comments');
-      expect(history.location.pathname).toBe('/comments');
+    const nameText = screen.getByText(/Nome:Procopio/i);
+    expect(nameText).toBeInTheDocument();
 
-      // Agir
-      const input = screen.getByRole('textbox');
-      const button = screen.getByRole('button', {
-        name: 'Deixe um comentário'
-      });
-      userEvent.type(input, 'Muito Bom! Parabéns');
-      userEvent.click(button);
+    const ageText = screen.getByText(/Idade:25/i);
+    expect(ageText).toBeInTheDocument();
 
-      // Aferir
-      const comment = await screen.findByText('Muito Bom! Parabéns');
-      expect(comment).toBeInTheDocument();
-    })
+    const emailText = screen.getByText(/Email:procopio@email.com/i);
+    expect(emailText).toBeInTheDocument();
   });
 });

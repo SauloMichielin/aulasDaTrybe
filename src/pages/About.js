@@ -1,17 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function About() {
-  return (
-    <section>
-      <h1>Sobre Mim</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Optio voluptates molestiae ullam laborum mollitia possimus!
-        Tenetur omnis ab magni, voluptas, explicabo quisquam,
-        officiis doloribus ratione blanditiis illo voluptatem ducimus? Error?
-
-      </p>
-    </section>
-  );
+class About extends React.Component {
+  render() {
+    const { userLogin } = this.props;
+    if (!userLogin.email) return <div>Login não efetuado!</div>;
+    return (
+      <section>
+        <h1 className="text-center">Bem vindo</h1>
+        <h2>{userLogin.email}</h2>
+        <Link to="/register">Cadastre outros</Link>
+      </section>
+    );
+  }
 }
-export default About;
+const mapStateToProps = (state) => ({
+  userLogin: state.login,
+});
+
+About.propTypes = {
+  userLogin: PropTypes.shape({
+    email: PropTypes.string,
+  }).isRequired,
+};
+
+export default connect(mapStateToProps)(About);
