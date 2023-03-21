@@ -1,4 +1,4 @@
-api/node_modules
-api/data
 .DS_Store
 data
+.env
+roteiro.md
