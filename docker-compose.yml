@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web: # nome do serviço
+    image: nginx 
+    volumes: # -v
+      - ./public_html/:/usr/share/nginx/html/
+    ports: # -p
+      - 8080:80
+  db:
+    platform: linux/amd64 # específico para rodar no mac m1
+    image: mysql:5.7
+    environment: # variável de ambiente esperada na documentação 
+      - MYSQL_ROOT_PASSWORD=root # https://hub.docker.com/_/mysql
+    volumes: # -v
+      - ./data:/var/lib/mysql
+    ports: # -p
+      - 3306:3306
