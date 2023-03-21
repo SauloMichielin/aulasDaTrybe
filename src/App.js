@@ -1,19 +1,18 @@
-import logo from './trybe-logo.svg';
-import './App.css';
-import LoginForm from './components/LoginForm';
+import React, { Component } from 'react'
+import Header from './components/Header';
+import Content from './components/Content';
+import Sidebar from './components/Sidebar';
 
-function App() {
-  return (
-    <div>
-      <header>
-        <img src={ logo } alt="logo trybe" />
-      </header>
-      
-      <main className="app">
-        <LoginForm />
-      </main>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Sidebar />
+        <Content />
+      </div>
+    )
+  }
 }
 
 export default App;
