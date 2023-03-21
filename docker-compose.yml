@@ -1,15 +1,27 @@
-version: '3.0'
-
+version: '3'
 services:
-  db:
-    platform: linux/amd64
-    image: mysql:latest
-    container_name: mysql_db
-    env_file:
-      - ./.env
-    ports:
-      - 3306:3306
+  node:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    image: node:16-alpine
+    container_name: bank_api
     restart: always
+    working_dir: /app
     volumes:
-      - ./databases/:/docker-entrypoint-initdb.d
-      - ./data:/var/lib/mysql
+      - ./:/app
+    ports:
+      - 3000:3000
+    tty: true
+
+    depends_on:
+      - "database"
+  database:
+    container_name: bank_db
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bank
+    ports:
+      - "3306:3306"

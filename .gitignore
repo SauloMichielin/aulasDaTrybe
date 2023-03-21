@@ -1,4 +1,2 @@
-.DS_Store
-data
-.env
-roteiro.md
+node_modules
+lecture.md
