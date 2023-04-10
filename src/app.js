@@ -1,18 +1,17 @@
 const express = require('express');
-const accountsRouter = require('./routes/accountsRouter');
-const accountTypesRouter = require('./routes/accountTypesRouter');
+/* Removemos a importação do driverService pois ele não é mais usado aqui
+e importamos o objeto driverRoutes! */
+const { passengerRouter, driverRoutes } = require('./routers');
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/', (_req, res) => {
-  res.status(200).json({
-    message: 'Welcome to TrybeBank',
-  });
-});
+/* Adicionamos o registro das rotas para o CRUD de pessoas passageiras */
+app.use('/passengers', passengerRouter);
 
-app.use('/accounts', accountsRouter);
-app.use('/account_types', accountTypesRouter);
+/* Aqui apagamos todos o código que movemos para o do router de pessoas motoristas
+e associamos o mesmo para ser responsável por qualquer rota que começar com /drivers */
+app.use('/drivers', driverRoutes);
 
 module.exports = app;
